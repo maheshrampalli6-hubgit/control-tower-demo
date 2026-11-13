@@ -1,0 +1,21 @@
+{
+  "name": "abc-delivery-control-tower-demo",
+  "version": "1.0.0",
+  "description": "Demo of a Delivery Control Tower for a fictional parcel company (ABC Inc.): live tracking, alerts and analytics with simulated data.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "TICK_MS=2000 node server.js",
+    "smoke": "node scripts/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "express": "^4.21.2",
+    "leaflet": "^1.9.4"
+  },
+  "license": "MIT"
+}

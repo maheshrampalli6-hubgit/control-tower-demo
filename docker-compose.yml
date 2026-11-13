@@ -1,0 +1,16 @@
+services:
+  control-tower:
+    build: .
+    image: abc-control-tower-demo:latest
+    container_name: control-tower
+    restart: unless-stopped
+    ports:
+      - "80:3000"
+    environment:
+      - PORT=3000
+      # How fast the simulated day runs: every TICK_MS of real time = SIM_MINUTES_PER_TICK simulated minutes
+      - TICK_MS=5000
+      - SIM_MINUTES_PER_TICK=2
+      # Optional password protection for a public demo (leave empty to disable)
+      - DEMO_USER=${DEMO_USER:-}
+      - DEMO_PASS=${DEMO_PASS:-}

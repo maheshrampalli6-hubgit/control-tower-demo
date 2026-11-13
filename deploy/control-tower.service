@@ -1,0 +1,20 @@
+[Unit]
+Description=ABC Delivery Control Tower demo (Node.js)
+After=network.target
+
+[Service]
+Type=simple
+User=controltower
+WorkingDirectory=/opt/control-tower
+EnvironmentFile=/etc/control-tower.env
+ExecStart=__NODE__ server.js
+Restart=always
+RestartSec=3
+# Basic hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
